@@ -2,7 +2,6 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
-import { GoogleLogin } from "react-google-login";
 import { gapi } from "gapi-script";
 import { useDispatch } from "react-redux";
 import { BaseUrl } from "../Constants/BaseUrl";
@@ -16,14 +15,14 @@ const LoginBox = ({ handleBox }) => {
     password: "",
   });
   const [loading, setloading] = useState(false)
-  useEffect(() => {
-    gapi.load("client:auth2", () => {
-      gapi.auth2.init({
-        clientId:
-          "1095459129528-7ga8q808uf5998953mdfet5uijlh7ush.apps.googleusercontent.com",
-      });
-    });
-  }, []);
+  // useEffect(() => {
+  //   gapi.load("client:auth2", () => {
+  //     gapi.auth2.init({
+  //       clientId:
+  //         "1095459129528-7ga8q808uf5998953mdfet5uijlh7ush.apps.googleusercontent.com",
+  //     });
+  //   });
+  // }, []);
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
